@@ -1,27 +1,20 @@
-# Devops Test
+### Monitoring
+Files:
+* curl-format.txt
+* monitoring.sh
 
-### Overview
-This is an application that is a dummy webservice that returns the
-last update time.  The last updated time is cached in redis and
-resets every 5 seconds.  It has a single '/' endpoint.  The redis
-address is passed in through the environment.
+To run use `./monitoring.sh`.
 
-NOTE: The following tasks are estimated to take no more than 3 hours total.
+The most important metrics of monitoring are latencies of answers to users,
+availability of services/endpoints and response codes.
+In other words, metrics of user-experience.
+More traditional metrics like RAM and CPU consumption is an instrument of
+optimization and alerting.
+Other important type of monitoring is a security monitoring. Looking for anomalies,
+detecting problems with certs/libs versions/etc and getting data
+from dynamic vulnerability scanners.
 
-### Tasks
-1. Create Dockerfile for this application
-2. Create docker-compose.yaml to replicate a full running environment 
-so that a developer can run the entire application locally without having
-to run any dependencies (i.e. redis) in a separate process.
-3. Explain how you would monitor this application in production. 
-Please write code/scripts to do the monitoring.
-
-### Kubernetes(MiniKube) Tasks
-4. Prepare local Kubernetes environment (using MiniKube) to run our application in pod/container. 
-Store all relevant scripts (kubectl commands etc) in your forked repository.
-5. Suggest & create minimal local infrastructure to perform functional testing/monitoring of our application pod.
-Demonstrate monitoring of relevant results & metrics for normal app behavior and failure(s).
-
-Please fork this repository and make a pull request with your changes.
-
-Please provide test monitoring results in any convenient form (files, images, additional notes) as a separate archive.
+### CI/CD part
+* Docker: Dockerfile
+* Docker compose: docker-compose.yaml
+* Kubernetes: cd/app.yaml

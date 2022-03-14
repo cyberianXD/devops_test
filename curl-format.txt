@@ -1,0 +1,10 @@
+-------------\n
+HTTP code: %{http_code}\n
+-------------\n
+Total time:  %{time_total}s\n
+-------------\n
+Time of name resolving:  %{time_namelookup}s\n
+Time until the TCP connect:  %{time_connect}s\n
+Time until the TLS connect:  %{time_appconnect}s\n
+Time until the file transfer:  %{time_pretransfer}s\n
+Time from the start until the first byte:  %{time_starttransfer}s\n
